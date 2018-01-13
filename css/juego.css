@@ -1,0 +1,344 @@
+
+/*Código armado por La Foca Loca S.A. No modificar*/
+body {  
+  font-family: 'Roboto', sans-serif;  
+  width: 940px;
+  margin: 5% auto;
+  min-height: 100%;
+  background-image: url(../images/back.png);  
+  background-size: cover;
+}
+
+#titulo {
+  color: #fff;
+  background: #7C619D;
+  font-size: 24px;
+  padding: 15px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;  
+}
+
+.subtitulo {
+  font-size: 22px;
+  letter-spacing: 1.25px;
+  color: #ff0000;
+  margin-bottom: 0;
+  margin-top: 20px;
+  border-bottom: 1px solid #ff0000;
+}
+
+#seleccionar,
+#instrucciones {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+#nivel {
+  color: #fff;
+  font-size: 15px;
+}
+
+li {
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+li::before {
+  content: "»";
+  color: #ff0000;
+  padding-right: 5px;
+  font-size: 25px;
+}
+
+li input {
+  position: initial; 
+  top: initial; 
+}
+
+footer {
+  font-family: 'Cabin', sans-serif; 
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 0;
+  color: #00ffe9;
+  text-shadow: 0px 0px 5px #000;
+  background: #7c619d;
+  margin-top: -4px;
+}
+
+footer p {
+  margin: 0;
+}
+
+canvas {
+  border: 5px solid red;  
+}
+
+.col-40, .col-60 {
+  display: table-cell;
+  margin: 0;
+  vertical-align: top;
+}
+
+.col-40 {
+  background: #360c6b;
+  padding: 22px;
+  color: #000;
+}
+
+#movimientos-restantes {
+  color: #fff;
+  font-size: 1.75em;
+  float: left;
+  margin-bottom: 0;
+  margin-top: 22px;
+}
+
+#movimiento-contador {
+  color: #fff;
+  font-size: 3.5em;
+  float: right;    
+  margin: 0;
+  margin-top: 22px;
+}
+
+li.mover::before {
+  content:  "- ";
+  font-size: 18px;
+}
+
+#cantidadPiezasPorLado {
+  margin-left: 15px;
+  color: #00ffe9;
+  font-size: 22px;
+}
+
+.opcion-nivel {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 1px;
+  height: 15px;
+  width: 14px;
+  border: 2px solid purple;
+  cursor: pointer;  
+}
+
+.opcion-nivel:hover {
+  background: #f5607c;
+}
+
+.opcion-nivel:checked {
+  background: #ff0000;
+  box-shadow: 0px 0px 5px 1px #ff0000;
+}
+
+#contador {
+  color: #e4b8ff;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+#mezclar {
+  display: flex;
+  width: 7em;
+  padding: 8px;
+  cursor: pointer;
+  margin: 0 27.5%;
+  background: #9100ff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#mezclar:active {
+  background: #7309c3;
+}
+
+#picture {
+  height: 200px;
+  width: 200px;
+  margin: 0 34px;
+  border: 3px solid #DE294E;
+}
+
+#juego {
+  width: 600px;
+  height: 600px;
+  background: #fff;
+  border: 3px solid #ab3c3c;
+}
+
+#juego div {
+  height: 32.5%;
+  width: 32.5%;
+  float: left;
+  animation: fadein 2s;
+  border: 2.5px solid #ab3c3c;
+}
+
+/* .rompecabezas */
+#juego img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* --- Modelo --- */
+
+.modelo > label {
+  cursor: pointer;
+}
+
+.modelo_capa {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .75);  
+  position: fixed;
+  text-align: center;
+  z-index: 600;
+}
+
+.modelo_encima {
+  padding: 1em 0;
+  position: relative;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 90%;
+}
+
+@media (min-width: 50em) {
+  .modelo_encima {
+    padding: 1.75em;
+  }
+}
+
+@media (min-height: 37.5em) {
+  .modelo_encima {
+    position: absolute;
+    left: 45%;
+    top: 70%;
+    transform: translate(-50%, -80%);
+  }
+}
+
+.modelo_encima label {
+  background: #cb4e4e;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;  
+  position: absolute;
+  right: -6em;
+  top: -1em;  
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5;
+  font-size: 24px;
+  border: 3px solid #fff;
+}
+
+.modelo_encima label:hover {
+  background: #fff;
+  color: #cb4e4e;
+  border: 3px solid #cb4e4e;
+}
+
+.modelo_encima label:active {
+  background: rgb(165, 165, 165);
+  color: #9b3434;
+  border: 3px solid #c72d2d;
+}
+
+.modelo img {
+  width: 250px;
+}
+
+input {
+  position: absolute;
+  top: -1000px;
+}
+
+.modelo_capa {
+  opacity: 0;
+  z-index: -100;
+  transform: scale(.5);
+  transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+input:checked ~ .modelo_capa {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 800;
+}
+
+.modelo img {
+  border: 5px solid #cb4e4e;
+  width: 600px;
+  height: 600px;
+}
+
+.mostrar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.mostrar:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mensaje {
+  margin: 90px auto;
+  padding: 45px 100px 110px;  
+  background: url("../img/felicidades-back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  border: 7.5px solid #ab3c3c;
+  border-radius: 2%;
+}
+
+.mensaje h2 {
+  font-size: 50px;
+  text-shadow: 2px 2px #000;
+}
+
+.mensaje div {
+  color: #DE294E;
+  text-align: center;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.mensaje img {
+  width: 200px;
+}

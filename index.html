@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rompecabezas Recargado</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
+    <link rel="icon" href="images/icon-puzzle.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/juego.css">
+    <link rel="stylesheet" type="text/css" href="js/sweetalert/sweetalert.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+  </head>
+  <body>
+    <div class="col-40">
+      <h1 id="titulo">Rompecabezas Recargado</h1>      
+      <h2 class="subtitulo">Seleccionar</h2>
+      <ul id="seleccionar">
+        <li>
+          <span>Cantidad de piezas por lado:</span>
+          <span id="cantidadPiezasPorLado">3</span>
+        </li>
+        <li>
+          <span id="nivel">Nivel: </span>
+          <label>
+            <input class="opcion-nivel" type="radio" name="level" id="nivel-facil" checked>Fácil
+          </label>
+          <label>
+            <input class="opcion-nivel" type="radio" name="level" id="nivel-intermedio">Intermedio
+          </label>
+          <label>
+            <input class="opcion-nivel" type="radio" name="level" id="nivel-dificil">Difícil
+          </label>
+        </li>
+      </ul>
+      <h2 class="subtitulo">Instrucciones</h2>
+      <ul id="instrucciones">
+        <li>Mover las piezas:</li>
+        <li class="mover">Presionando las teclas de flechas</li>
+        <li class="mover">Presionando la pieza </li>
+        <li>Encontar el orden correcto de las piezas</li>
+      </ul>
+      <button id="mezclar">Mezclar</button>
+      <p id="movimientos-restantes">Movimientos<br>Restantes</p>
+      <span id="movimiento-contador">45</span>
+    </div>
+    </div>
+    <div class="col-60">
+      <canvas id="game" width="600" height="600""></canvas>
+    </div>
+    <footer>
+      <p>Autor: Oliver Duran, desarrollador Full Stack Jr.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    <script src="js/juego.js"></script>
+  </body>
+</html>

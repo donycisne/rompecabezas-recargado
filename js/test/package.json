@@ -1,0 +1,18 @@
+{
+  "name": "test-mocha-chai-browser",
+  "version": "1.0.0",
+  "description": "Testing de JavaScript usando Mocha",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ludovicofischer/mocha-chai-browser-demo.git"
+  },
+  "author": "ludovico Fischer",
+  "license": "MIT",
+  "devDependencies": {
+    "karma-cli": "0.0.4",
+    "karma-mocha": "^0.1.10"
+  }
+}
